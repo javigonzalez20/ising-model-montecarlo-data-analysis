@@ -20,12 +20,6 @@ The model is especially interesting due to its phase transition behavior: at low
 - `ising_model_montecarlo.f90`: Main simulation code written in Fortran 90.
 - `Voluntario_Ising.pdf`: Report explaining the theoretical and computational background of the project.
 - `figures/`: Folder containing results visualizations.
-  - `magnetization_vs_temperature.jpeg`
-  - `specific_heat_vs_temperature.jpeg`
-  - `mean_energy_vs_temperature.jpeg`
-- Output files (generated when running the code):  
-  - `matrices_T=0.5K.dat`: Stores lattice states over time.  
-  - `magnetizacion_T=0.5K.dat`: Stores magnetization vs. time.
 
 ## 🔬 Physical Interpretation
 
