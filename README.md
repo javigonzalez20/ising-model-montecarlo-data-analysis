@@ -1,4 +1,4 @@
-# 🧠 Modeling Phase Transitions in the 2D Ising Model using Monte Carlo Simulations  (When Physics Meets Data Science)
+# 🧊 Modeling Phase Transitions in the 2D Ising Model using Monte Carlo Simulations  (When Physics Meets Data Science)
 This project simulates the behavior of a two-dimensional Ising model using the Metropolis Monte Carlo method. It was developed as part of a university course on statistical physics.
 
 ## 🧠 Context
