@@ -61,6 +61,31 @@ This behavior reflects the divergence of the specific heat at the phase transiti
 
 **Figure 3:** Mean energy as a function of temperature. As expected, the energy increases with temperature. Around the critical point, the curve stabilizes slightly and fluctuations increase, resulting in higher uncertainty in the measurements.
 
+## 📉 Correlation Function Analysis
+
+We also analyzed the behavior of the spin-spin correlation function \( f(i) \), which measures the statistical dependence between spins at a given distance \( i \). We computed this for several temperatures and system sizes.
+
+The following plots show the decay of \( f(i) \) for different system sizes \( N \) and temperatures \( T = 1.5, 2.6, 3, 3.4 \).
+
+📊 **Correlation Function for Varying System Sizes**
+
+- ![Correlation N=16](./images/correlation_N16.jpeg)  
+  **Figure 5:** Correlation function with \( N=16 \) for different temperatures.
+
+- ![Correlation N=32](./images/correlation_N32.jpeg)  
+  **Figure 6:** Correlation function with \( N=32 \) for different temperatures.
+
+- ![Correlation N=64](./images/correlation_N64.jpeg)  
+  **Figure 7:** Correlation function with \( N=64 \) for different temperatures.
+
+- ![Correlation N=128](./images/correlation_N128.jpeg)  
+  **Figure 8:** Correlation function with \( N=128 \) for different temperatures.
+
+📌 **Interpretation:**
+
+- As expected, \( f(i) \) decreases with increasing \( i \), confirming the theoretical behavior that correlations vanish at large distances.
+- Higher temperatures lead to faster decay, indicating the loss of magnetic order due to thermal fluctuations.
+- Larger \( N \) values yield smoother and more accurate results, consistent with finite-size scaling theory.
 ## 🚀 How to Run
 
 1. Compile the Fortran program using a compiler like `gfortran`:
