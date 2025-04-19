@@ -23,8 +23,7 @@ The code calculates the variation in energy when flipping a randomly selected sp
 
 - `ising_model_montecarlo.f90`: Clean, documented Fortran source code of the simulation.
 - `Voluntario_Ising.pdf`: Original report describing the physical model, the implementation, and visual results.
-- `matrices_T=0.5K.dat`: Spin configurations over time (output file, not included).
-- `magnetizacion_T=0.5K.dat`: Time evolution of magnetization (output file, not included).
+
 
 ## 📈 Example Results
 
