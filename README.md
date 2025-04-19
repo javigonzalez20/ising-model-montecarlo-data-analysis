@@ -69,16 +69,16 @@ The following plots show the decay of \( f(i) \) for different system sizes \( N
 
 📊 **Correlation Function for Varying System Sizes**
 
-- ![Correlation N=16](./images/correlation_N16.jpeg)  
+- ![Correlation N=16](./figures/correlation_N16.jpeg)  
   **Figure 5:** Correlation function with \( N=16 \) for different temperatures.
 
-- ![Correlation N=32](./images/correlation_N32.jpeg)  
+- ![Correlation N=32](./figures/correlation_N32.jpeg)  
   **Figure 6:** Correlation function with \( N=32 \) for different temperatures.
 
-- ![Correlation N=64](./images/correlation_N64.jpeg)  
+- ![Correlation N=64](./figures/correlation_N64.jpeg)  
   **Figure 7:** Correlation function with \( N=64 \) for different temperatures.
 
-- ![Correlation N=128](./images/correlation_N128.jpeg)  
+- ![Correlation N=128](./figures/correlation_N128.jpeg)  
   **Figure 8:** Correlation function with \( N=128 \) for different temperatures.
 
 📌 **Interpretation:**
