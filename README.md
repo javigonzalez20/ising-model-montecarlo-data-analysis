@@ -32,7 +32,7 @@ The simulation reveals two key results highlighting the critical behavior of the
 
 ### 📈 Magnetization vs Temperature
 
-![Magnetization vs Temperature](./magnetization_vs_temperature.jpeg)
+![Magnetization vs Temperature](./figures/magnetization_vs_temperature.jpeg)
 
 **Figure 1:** Magnetization as a function of temperature for various system sizes. A clear phase transition is observed around the critical temperature \( T_c \approx 2.27 \), where the magnetization drops as thermal energy overcomes spin alignment.
 
@@ -40,7 +40,7 @@ The simulation reveals two key results highlighting the critical behavior of the
 
 ### 🌡️ Specific Heat vs Temperature
 
-![Specific Heat vs Temperature](./specific_heat_vs_temperature.jpeg)
+![Specific Heat vs Temperature](./figures/specific_heat_vs_temperature.jpeg)
 
 **Figure 2:** Specific heat as a function of temperature. The sharp peak near \( T_c \) becomes more pronounced as the system size increases, illustrating the divergence typical of second-order phase transitions. The peak height scales with lattice size, consistent with finite-size scaling theory.
 
