@@ -20,22 +20,29 @@ The model is especially interesting due to its phase transition behavior: at low
 
 - `ising_model_montecarlo.f90`: Main simulation code written in Fortran 90.
 - `Voluntario_Ising.pdf`: Report explaining the theoretical and computational background of the project.
-- `magnetization_vs_temperature.png`: Plot showing the main result of the simulation.
+- `magnetization_vs_temperature.jpeg`: Plot showing magnetization behavior.
+- `specific_heat_vs_temperature.jpeg`: Plot showing specific heat behavior.
 - Output files (generated when running the code):  
   - `matrices_T=0.5K.dat`: Stores lattice states over time.  
   - `magnetizacion_T=0.5K.dat`: Stores magnetization vs. time.
 
 ## 🔬 Physical Interpretation
 
-The key result is the observation of a **second-order phase transition** in magnetization:
+The simulation reveals two key results highlighting the critical behavior of the system.
 
-### 📈 Results
+### 📈 Magnetization vs Temperature
 
 ![Magnetization vs Temperature](./magnetization_vs_temperature.jpeg)
 
-**Figure:** Magnetization as a function of temperature for various system sizes. A clear phase transition is observed around the critical temperature \( T_c \approx 2.27 \), which is characteristic of the 2D Ising model.
+**Figure 1:** Magnetization as a function of temperature for various system sizes. A clear phase transition is observed around the critical temperature \( T_c \approx 2.27 \), where the magnetization drops as thermal energy overcomes spin alignment.
 
-As the temperature increases, the system transitions from an ordered magnetic state to a disordered one, which is a classical signature of spontaneous symmetry breaking.
+---
+
+### 🌡️ Specific Heat vs Temperature
+
+![Specific Heat vs Temperature](./specific_heat_vs_temperature.jpeg)
+
+**Figure 2:** Specific heat as a function of temperature. The sharp peak near \( T_c \) becomes more pronounced as the system size increases, illustrating the divergence typical of second-order phase transitions. The peak height scales with lattice size, consistent with finite-size scaling theory.
 
 ## 🚀 How to Run
 
@@ -43,4 +50,3 @@ As the temperature increases, the system transitions from an ordered magnetic st
 
 ```bash
 gfortran -o ising_model ising_model_montecarlo.f90
-
