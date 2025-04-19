@@ -1,40 +1,45 @@
-# Monte Carlo Simulation of the Ising Model
+# 🧊 2D Ising Model Simulation with Monte Carlo (Metropolis Algorithm)
 
-This project presents a Monte Carlo simulation of the two-dimensional Ising model, implemented in Fortran, as part of a university assignment in Statistical Physics. The simulation explores the evolution of magnetization at a fixed temperature using the Metropolis algorithm.
+This project simulates the behavior of a two-dimensional Ising model using the Metropolis Monte Carlo method. It was developed as part of a university course on statistical physics.
 
-## 🧠 Background
+## 🧠 Context
 
-The Ising model is a mathematical model used in statistical mechanics to describe ferromagnetism in statistical physics. It consists of discrete variables representing magnetic dipole moments (spins) arranged on a lattice. Spins interact with their nearest neighbors and can be either +1 or -1. The total energy of the system is determined by the spin configuration, and the system evolves according to probabilistic rules (e.g., the Metropolis criterion) toward thermal equilibrium.
+The Ising model is a mathematical model of ferromagnetism in statistical mechanics. It consists of discrete variables (spins) that represent magnetic dipole moments of atomic spins. These spins are arranged in a lattice, and each spin interacts with its nearest neighbors.
 
-In this simulation, we study the time evolution of magnetization at a temperature of 0.5 K and track the system's transition toward equilibrium using a 60x60 lattice with periodic boundary conditions.
+The model is especially interesting due to its phase transition behavior: at low temperatures, spins tend to align (magnetization), and at high temperatures, thermal fluctuations dominate (disordered phase).
 
-## 🧩 Methodology
+## 🧮 How It Works
 
-- **Programming Language**: Fortran 90
-- **Algorithm**: Metropolis Monte Carlo
-- **Lattice Size**: 60x60 spins
-- **Temperature**: 0.5 K (fixed)
-- **Boundary Conditions**: Periodic
-- **Simulation Time**: 100,000 Monte Carlo steps per spin
+- A 2D square lattice of size \( N \times N \) is initialized with random spins (+1 or -1).
+- Periodic boundary conditions are applied.
+- The system evolves through the Metropolis algorithm, which evaluates energy differences due to random spin flips and decides whether to accept the changes based on temperature.
+- The magnetization is measured over time and saved to a file.
+- The process is repeated for various temperatures and lattice sizes.
 
-The code calculates the variation in energy when flipping a randomly selected spin and decides whether to accept the flip based on the Metropolis criterion. It records the system's magnetization and outputs the spin configuration to `.dat` files.
+## 🖥️ File Structure
 
-## 📂 Files
+- `ising_model_montecarlo.f90`: Main simulation code written in Fortran 90.
+- `Voluntario_Ising.pdf`: Report explaining the theoretical and computational background of the project.
+- `magnetization_vs_temperature.png`: Plot showing the main result of the simulation.
+- Output files (generated when running the code):  
+  - `matrices_T=0.5K.dat`: Stores lattice states over time.  
+  - `magnetizacion_T=0.5K.dat`: Stores magnetization vs. time.
 
-- `ising_model_montecarlo.f90`: Clean, documented Fortran source code of the simulation.
-- `IsingModel_MonteCarlo_Simulation_Report.pdf`: Original report describing the physical model, the implementation, and visual results.
+## 🔬 Physical Interpretation
 
+The key result is the observation of a **second-order phase transition** in magnetization:
 
-## 📈 Example Results
+### 📈 Results
 
-Images from the simulation show the spontaneous ordering of spins over time, and a graph of magnetization vs. time reflects the convergence to a steady value. These results are presented and interpreted in the attached PDF.
+![Magnetization vs Temperature](./magnetization_vs_temperature.png)
+
+**Figure:** Magnetization as a function of temperature for various system sizes. A clear phase transition is observed around the critical temperature \( T_c \approx 2.27 \), which is characteristic of the 2D Ising model.
+
+As the temperature increases, the system transitions from an ordered magnetic state to a disordered one, which is a classical signature of spontaneous symmetry breaking.
 
 ## 🚀 How to Run
 
-To run the simulation:
+1. Compile the Fortran program using a compiler like `gfortran`:
 
-1. Make sure you have a Fortran compiler (e.g., `gfortran`) installed.
-2. Compile the code:
-
-   ```bash
-   gfortran ising_model_montecarlo.f90 -o ising_model
+```bash
+gfortran -o ising_model ising_model_montecarlo.f90
