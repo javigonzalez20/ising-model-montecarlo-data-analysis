@@ -1,55 +1,59 @@
-# Monte Carlo Simulation of the 2D Ising Model
+# 🧊 Ising Model Simulation with Monte Carlo Method
 
-This repository contains a Monte Carlo simulation of the 2D Ising model using the Metropolis algorithm. The model was implemented in Fortran and was part of an academic project during my Physics degree.
+This repository contains a Monte Carlo simulation of the 2D Ising model written in Fortran. The project was developed as part of a university assignment and explores fundamental concepts of statistical mechanics, such as phase transitions and magnetization.
 
-## Overview
+## 📚 About the Project
 
-The goal of this project is to study the behavior of magnetization and heat capacity of a 2D lattice of spins as a function of temperature. The simulation uses periodic boundary conditions and is performed at different lattice sizes to observe finite-size effects.
+The Ising model is one of the most studied systems in statistical physics, known for exhibiting a phase transition at a critical temperature. In this project, we simulate a square lattice of spins using the Metropolis algorithm. The lattice is initialized randomly and evolves over time, allowing us to compute observables such as magnetization and specific heat.
 
-The project was carried out voluntarily in addition to my coursework, and included both theoretical analysis and visualization of results.
+The simulation provides insights into how spin alignment changes with temperature, highlighting the critical behavior of the system.
 
-## Features
+## 📈 Results
 
-- Spin initialization with random orientation
-- Periodic boundary conditions
-- Energy variation calculation
-- Magnetization calculation
-- Monte Carlo steps for thermalization
-- Data output for visualization
+Two key results were obtained by varying the system size `N` and analyzing the behavior at different temperatures `T`.
 
-## Files
+### 🔻 Magnetization vs Temperature
 
-- `ising_model_montecarlo.f90`: Main Fortran program implementing the Metropolis algorithm
-- `Voluntario_Ising.pdf`: Final report (in Spanish) explaining the theoretical background and analysis
-- `magnetization_vs_temperature.jpeg`: Magnetization vs. Temperature graph
-- `heat_capacity_vs_temperature.jpeg`: Heat Capacity vs. Temperature graph
+![Magnetization](./magnetization.jpeg)
 
-## Results
-
-### Magnetization vs. Temperature
-
-Magnetization decreases as temperature increases, showing a clear phase transition near the critical temperature.
-
-![Magnetization vs Temperature](./magnetization_vs_temperature.jpeg)
-
-> **Figure:** Magnetization (M) as a function of temperature (T) for different system sizes (N). As N increases, the phase transition becomes sharper.
+**Figure 1**: Magnetization (M) as a function of temperature (T) for different lattice sizes `N`. As the system approaches the critical temperature, the magnetization drops sharply, signaling a phase transition from ordered to disordered states.
 
 ---
 
-### Heat Capacity vs. Temperature
+### 🔺 Specific Heat vs Temperature
 
-Heat capacity peaks near the critical temperature, becoming more pronounced as system size increases.
+![Specific Heat](./specific_heat.jpeg)
 
-![Heat Capacity vs Temperature](./heat_capacity_vs_temperature.jpeg)
+**Figure 2**: Specific heat (Cv) as a function of temperature (T) for various `N`. The peak becomes sharper and higher for larger `N`, as expected from finite-size scaling theory. The critical temperature is approximated by the position of the peak.
 
-> **Figure:** Heat capacity (Cv) as a function of temperature (T). As lattice size increases, the peak becomes sharper and better aligned with theoretical expectations.
+## 🛠️ Code
 
-This behavior is consistent with finite-size scaling theory, where the heat capacity peak scales as \( N^{\sigma/\nu} \).
+The main simulation is written in Fortran and simulates spin flips according to the Metropolis criterion. It outputs:
 
-## How to Run
+- Time evolution of magnetization
+- Lattice configurations
+- Temperature-dependent thermodynamic quantities
 
-This code is written in Fortran 90 and can be compiled and executed using `gfortran`:
+## 📄 Files
 
-```bash
-gfortran -o ising ising_model_montecarlo.f90
-./ising
+- `ising_model_montecarlo.f90`: Main Fortran source code
+- `Voluntario_Ising.pdf`: Report with full explanation and analysis
+- `magnetization.jpeg`: Magnetization vs Temperature plot
+- `specific_heat.jpeg`: Specific Heat vs Temperature plot
+
+## 💡 Future Improvements
+
+- Port the simulation to Python using NumPy for accessibility
+- Add animated visualizations of spin configurations
+- Automate data collection and plotting
+
+## 📬 Contact
+
+Feel free to reach out if you have any questions or suggestions!  
+📧 Javier Jesús González Moreno  
+🌍 Munich, Germany
+
+---
+
+⭐️ *If you found this project interesting, give it a star and check out my other physics and data science projects!*
+
