@@ -22,7 +22,7 @@ The code calculates the variation in energy when flipping a randomly selected sp
 ## 📂 Files
 
 - `ising_model_montecarlo.f90`: Clean, documented Fortran source code of the simulation.
-- `Voluntario_Ising.pdf`: Original report describing the physical model, the implementation, and visual results.
+- `IsingModel_MonteCarlo_Simulation_Report.pdf`: Original report describing the physical model, the implementation, and visual results.
 
 
 ## 📈 Example Results
