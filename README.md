@@ -31,7 +31,7 @@ The key result is the observation of a **second-order phase transition** in magn
 
 ### 📈 Results
 
-![Magnetization vs Temperature](./magnetization_vs_temperature.png)
+![Magnetization vs Temperature](./magnetization_vs_temperature.jpeg)
 
 **Figure:** Magnetization as a function of temperature for various system sizes. A clear phase transition is observed around the critical temperature \( T_c \approx 2.27 \), which is characteristic of the 2D Ising model.
 
