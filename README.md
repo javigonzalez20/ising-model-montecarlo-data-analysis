@@ -37,9 +37,3 @@ The key result is the observation of a **second-order phase transition** in magn
 
 As the temperature increases, the system transitions from an ordered magnetic state to a disordered one, which is a classical signature of spontaneous symmetry breaking.
 
-## 🚀 How to Run
-
-1. Compile the Fortran program using a compiler like `gfortran`:
-
-```bash
-gfortran -o ising_model ising_model_montecarlo.f90
