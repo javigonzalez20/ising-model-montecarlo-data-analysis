@@ -88,7 +88,49 @@ The following plots show the decay of \( f(i) \) for different system sizes \( N
 - Larger \( N \) values yield smoother and more accurate results, consistent with finite-size scaling theory.
 ## 🚀 How to Run
 
-1. Compile the Fortran program using a compiler like `gfortran`:
+## 📐 Critical Exponents and Correlation Length
 
-```bash
-gfortran -o ising_model ising_model_montecarlo.f90
+To extract deeper physical insights, we studied the critical exponents associated with the 2D Ising model's phase transition using our simulation results for \( N = 128 \), the size that best approximates the thermodynamic limit.
+
+### 🔢 Critical Exponent \( \beta \)
+
+To estimate the exponent \( \beta \), which governs the behavior of magnetization near the critical temperature, we performed a nonlinear fit of the magnetization curve with the following functional form:
+
+\[
+f(T) = (A - B \cdot \sin^{-4}(2/T))^C
+\]
+
+Where \( C \) corresponds to the critical exponent \( \beta \). The fit was applied to magnetization values for \( T < T_c \), yielding:
+
+> 📌 **Estimated \( \beta = 0.12621 \pm 0.00008 **
+
+This result is remarkably close to the theoretical value for the 2D Ising model \( \beta_{\text{theoretical}} = 1/8 = 0.125 \).
+
+---
+
+### 🧭 Correlation Length and Exponent \( \nu \)
+
+Using the relation between system size and critical temperature shift:
+
+\[
+T_c(N) \sim N^{-1/\nu}
+\]
+
+We performed a linear fit of the critical temperature values obtained for different \( N \), resulting in:
+
+> 📌 **Estimated \( \nu = 1.00 **
+
+Which is in perfect agreement with theoretical predictions for 2D systems.
+
+---
+
+### 🧲 Correlation Length Behavior
+
+Finally, we used the definition of correlation length \( \xi \), which is the distance at which the spin-spin correlation function decays to 0.368 of its initial value.
+
+Using the correlation plots from the previous section:
+
+- For **low temperatures**, the correlation length is **long**, indicating stronger order.
+- For **high temperatures**, especially above \( T_c \), the correlation length is **short**, due to increased thermal noise and disorder.
+
+🧪 Although precise numerical values were not extracted from the plots, the qualitative trend aligns with theoretical expectations.
