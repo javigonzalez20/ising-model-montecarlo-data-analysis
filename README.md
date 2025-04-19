@@ -1,39 +1,55 @@
-# 🧊 2D Ising Model Simulation with Monte Carlo (Metropolis Algorithm)
+# Monte Carlo Simulation of the 2D Ising Model
 
-This project simulates the behavior of a two-dimensional Ising model using the Metropolis Monte Carlo method. It was developed as part of a university course on statistical physics.
+This repository contains a Monte Carlo simulation of the 2D Ising model using the Metropolis algorithm. The model was implemented in Fortran and was part of an academic project during my Physics degree.
 
-## 🧠 Context
+## Overview
 
-The Ising model is a mathematical model of ferromagnetism in statistical mechanics. It consists of discrete variables (spins) that represent magnetic dipole moments of atomic spins. These spins are arranged in a lattice, and each spin interacts with its nearest neighbors.
+The goal of this project is to study the behavior of magnetization and heat capacity of a 2D lattice of spins as a function of temperature. The simulation uses periodic boundary conditions and is performed at different lattice sizes to observe finite-size effects.
 
-The model is especially interesting due to its phase transition behavior: at low temperatures, spins tend to align (magnetization), and at high temperatures, thermal fluctuations dominate (disordered phase).
+The project was carried out voluntarily in addition to my coursework, and included both theoretical analysis and visualization of results.
 
-## 🧮 How It Works
+## Features
 
-- A 2D square lattice of size \( N \times N \) is initialized with random spins (+1 or -1).
-- Periodic boundary conditions are applied.
-- The system evolves through the Metropolis algorithm, which evaluates energy differences due to random spin flips and decides whether to accept the changes based on temperature.
-- The magnetization is measured over time and saved to a file.
-- The process is repeated for various temperatures and lattice sizes.
+- Spin initialization with random orientation
+- Periodic boundary conditions
+- Energy variation calculation
+- Magnetization calculation
+- Monte Carlo steps for thermalization
+- Data output for visualization
 
-## 🖥️ File Structure
+## Files
 
-- `ising_model_montecarlo.f90`: Main simulation code written in Fortran 90.
-- `Voluntario_Ising.pdf`: Report explaining the theoretical and computational background of the project.
-- `magnetization_vs_temperature.png`: Plot showing the main result of the simulation.
-- Output files (generated when running the code):  
-  - `matrices_T=0.5K.dat`: Stores lattice states over time.  
-  - `magnetizacion_T=0.5K.dat`: Stores magnetization vs. time.
+- `ising_model_montecarlo.f90`: Main Fortran program implementing the Metropolis algorithm
+- `Voluntario_Ising.pdf`: Final report (in Spanish) explaining the theoretical background and analysis
+- `magnetization_vs_temperature.jpeg`: Magnetization vs. Temperature graph
+- `heat_capacity_vs_temperature.jpeg`: Heat Capacity vs. Temperature graph
 
-## 🔬 Physical Interpretation
+## Results
 
-The key result is the observation of a **second-order phase transition** in magnetization:
+### Magnetization vs. Temperature
 
-### 📈 Results
+Magnetization decreases as temperature increases, showing a clear phase transition near the critical temperature.
 
 ![Magnetization vs Temperature](./magnetization_vs_temperature.jpeg)
 
-**Figure:** Magnetization as a function of temperature for various system sizes. A clear phase transition is observed around the critical temperature \( T_c \approx 2.27 \), which is characteristic of the 2D Ising model.
+> **Figure:** Magnetization (M) as a function of temperature (T) for different system sizes (N). As N increases, the phase transition becomes sharper.
 
-As the temperature increases, the system transitions from an ordered magnetic state to a disordered one, which is a classical signature of spontaneous symmetry breaking.
+---
 
+### Heat Capacity vs. Temperature
+
+Heat capacity peaks near the critical temperature, becoming more pronounced as system size increases.
+
+![Heat Capacity vs Temperature](./heat_capacity_vs_temperature.jpeg)
+
+> **Figure:** Heat capacity (Cv) as a function of temperature (T). As lattice size increases, the peak becomes sharper and better aligned with theoretical expectations.
+
+This behavior is consistent with finite-size scaling theory, where the heat capacity peak scales as \( N^{\sigma/\nu} \).
+
+## How to Run
+
+This code is written in Fortran 90 and can be compiled and executed using `gfortran`:
+
+```bash
+gfortran -o ising ising_model_montecarlo.f90
+./ising
