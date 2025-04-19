@@ -1,4 +1,4 @@
-# 🧊 2D Ising Model Simulation with Monte Carlo (Metropolis Algorithm)
+# 🧊 Modeling Phase Transitions in the 2D Ising Model using Monte Carlo Simulations
 
 This project simulates the behavior of a two-dimensional Ising model using the Metropolis Monte Carlo method. It was developed as part of a university course on statistical physics.
 
