@@ -88,49 +88,51 @@ The following plots show the decay of \( f(i) \) for different system sizes \( N
 - Larger \( N \) values yield smoother and more accurate results, consistent with finite-size scaling theory.
 ## 🚀 How to Run
 
-## 📐 Critical Exponents and Correlation Length
+## 📐## 📐 Critical Exponents and Correlation Length
 
-To extract deeper physical insights, we studied the critical exponents associated with the 2D Ising model's phase transition using our simulation results for \( N = 128 \), the size that best approximates the thermodynamic limit.
+To extract deeper physical insights, we studied the critical exponents associated with the 2D Ising model's phase transition using our simulation results for **N = 128**, the size that best approximates the thermodynamic limit.
 
-### 🔢 Critical Exponent \( \beta \)
+### 🔢 Critical Exponent: Beta (β)
 
-To estimate the exponent \( \beta \), which governs the behavior of magnetization near the critical temperature, we performed a nonlinear fit of the magnetization curve with the following functional form:
+To estimate the exponent **β**, which governs the behavior of magnetization near the critical temperature, we performed a nonlinear fit of the magnetization curve using the following function:
 
-\[
-f(T) = (A - B \cdot \sin^{-4}(2/T))^C
-\]
+**f(T) = [A − B · sin⁻⁴(2 / T)]ᶜ**
 
-Where \( C \) corresponds to the critical exponent \( \beta \). The fit was applied to magnetization values for \( T < T_c \), yielding:
+Where:
+- **T** is the temperature,
+- **f(T)** is the magnetization,
+- **C** is the critical exponent β we want to extract.
 
-> 📌 **Estimated \( \beta = 0.12621 \pm 0.00008 **
+This fit was applied for values of **T < Tc**.
 
-This result is remarkably close to the theoretical value for the 2D Ising model \( \beta_{\text{theoretical}} = 1/8 = 0.125 \).
-
----
-
-### 🧭 Correlation Length and Exponent \( \nu \)
-
-Using the relation between system size and critical temperature shift:
-
-\[
-T_c(N) \sim N^{-1/\nu}
-\]
-
-We performed a linear fit of the critical temperature values obtained for different \( N \), resulting in:
-
-> 📌 **Estimated \( \nu = 1.00 **
-
-Which is in perfect agreement with theoretical predictions for 2D systems.
+📌 **Estimated β = 0.12621 ± 0.00008**  
+This is very close to the theoretical value of **β = 1/8 = 0.125** for the 2D Ising model.
 
 ---
 
-### 🧲 Correlation Length Behavior
+### 🧭 Correlation Length and Critical Exponent: Nu (ν)
 
-Finally, we used the definition of correlation length \( \xi \), which is the distance at which the spin-spin correlation function decays to 0.368 of its initial value.
+Using the known finite-size scaling relation for the shift in critical temperature:
 
-Using the correlation plots from the previous section:
+**Tc(N) ∝ N^(-1/ν)**
 
-- For **low temperatures**, the correlation length is **long**, indicating stronger order.
-- For **high temperatures**, especially above \( T_c \), the correlation length is **short**, due to increased thermal noise and disorder.
+We performed a linear fit of the critical temperatures for different system sizes **N**, obtaining:
 
-🧪 Although precise numerical values were not extracted from the plots, the qualitative trend aligns with theoretical expectations.
+📌 **Estimated ν = 1.00**  
+Which aligns with the expected theoretical result for the 2D Ising model.
+
+---
+
+### 🧲 Behavior of the Correlation Length
+
+We also studied the **correlation length** ξ using the definition:  
+> The distance required for the correlation function to drop to 0.368 of its initial value.
+
+From the correlation plots:
+
+- At **low temperatures**, the correlation length is **larger**, indicating stronger order.
+- At **high temperatures** (T > Tc), it becomes **shorter**, reflecting spin disorder due to thermal fluctuations.
+
+Although we didn’t extract exact numerical values, the **qualitative behavior** matches theoretical predictions.
+
+---
